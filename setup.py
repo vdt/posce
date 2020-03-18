@@ -22,6 +22,7 @@ setup(
     # Package specifications.
     packages         = find_packages(exclude=['*tests*']),
     python_requires  = '>=3.8.0',
+    install_requires = ['click>=7.1.1'],
 
     # Console executables.
     entry_points = {
