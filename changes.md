@@ -8,6 +8,7 @@ Changelog
 ### Fixed
 - Dependencies for `setup.py`.
 
+
 ## [0.1.0] · 2020-03-18
 ### Added
 - Basic application code.

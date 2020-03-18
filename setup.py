@@ -12,6 +12,7 @@ setup(
     version      = VERSION_NUMBER,
     keywords     = 'cli notes note-taking',
     description  = 'A note-taking toolkit for your command line.',
+    url          = 'https://github.com/posce/posce',
     author       = 'Stephen Malone',
     author_email = 'mail@posce.org',
 
