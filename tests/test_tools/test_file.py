@@ -9,11 +9,11 @@ from posce.tools import file
 def test_append(tmpdir):
     # setup
     path = tmpdir.join('append.txt')
-    path.write('foo\nbar')
+    path.write('alpha\nbravo')
 
     # success
-    file.append(path, 'baz', sep='\n')
-    assert path.read() == 'foo\nbar\nbaz'
+    file.append(path, 'charlie', sep='\n')
+    assert path.read() == 'alpha\nbravo\ncharlie'
 
 def test_create(tmpdir):
     # setup
@@ -40,13 +40,13 @@ def test_find(tmpdir):
     # setup
     dire = tmpdir.join('find')
     dire.mkdir()
-    for name in ['foo', 'bar', 'baz']:
-        dire.join(f'{name}.txt').write(name)
+    for name in ['alpha', 'bravo', 'charlie']:
+        dire.join(f'{name}.txt').write('test')
 
     # success
-    assert list(file.find(dire, 'ba?.txt')) == [
-        str(dire.join('bar.txt')),
-        str(dire.join('baz.txt')),
+    assert list(file.find(dire, '*h*.txt')) == [
+        str(dire.join('alpha.txt')),
+        str(dire.join('charlie.txt')),
     ]
 
 def test_read(tmpdir):

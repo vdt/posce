@@ -12,19 +12,19 @@ from posce.items.book import Book
 def book(tmpdir):
     dire = tmpdir.join('book')
     dire.mkdir()
-    for name in ['foo', 'bar', 'baz']:
-        dire.join(f'{name}.txt').write(name)
+    for n, name in enumerate(['alpha', 'bravo', 'charlie']):
+        dire.join(f'{name}.txt').write(name * (n+1))
     return Book(dire, 'txt')
 
 def test_init(book):
     # success
     assert book.dire.endswith('book')
     assert book.ext == 'txt'
-    assert book.notes.keys() == {'foo', 'bar', 'baz'}
+    assert book.notes.keys() == {'alpha', 'bravo', 'charlie'}
 
 def test_contains(book):
     # success
-    assert 'foo'      in book
+    assert 'alpha'    in book
     assert 'nope' not in book
 
 def test_eq(book):
@@ -35,7 +35,7 @@ def test_eq(book):
 
 def test_getitem(book):
     # success
-    assert book['foo'] == book.notes['foo']
+    assert book['alpha'] == book.notes['alpha']
 
 def test_hash(book):
     # success
@@ -76,8 +76,8 @@ def test_filter(book):
 
 def test_match(book):
     # success
-    assert set(book.match('ba?')) == {book['bar'], book['baz']}
+    assert set(book.match('a*')) == {book['alpha']}
 
 def test_search(book):
     # success
-    assert set(book.search(r'(foo)')) == {book['foo']}
+    assert set(book.search(r'(alpha)')) == {book['alpha']}
