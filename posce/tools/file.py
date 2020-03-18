@@ -27,10 +27,10 @@ def create(path, string):
 
 def exists(path):
     '''
-    Return true if a file (not a directory) exists.
+    Return true if a file or directory exists.
     '''
 
-    return os.path.isfile(path)
+    return os.path.exists(path)
 
 def find(dire, term):
     '''
