@@ -2,6 +2,9 @@ Changelog
 =========
 
 ## Unreleased
+### Added
+- Disambiguation for note names.
+- New commands: `show`.
 
 
 ## [0.1.1] · 2020-03-18
