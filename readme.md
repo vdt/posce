@@ -39,7 +39,7 @@ Usage
 
 ### Commands
 
-Optional arguments are marked with `[brackets]`, choices are in `(parentheses)`.
+Required arguments are marked with `<angles>`, optional arguments with `[brackets]`, choices are in `(parentheses)`.
 
 #### `list [GLOB] [-rs]`
 
@@ -54,16 +54,43 @@ List all notes, or notes matching `GLOB` (default `*`).
 
 ~~~bash
 $ posce list
-alpha
-bravo
 charlie
+claudia
+josh
+sam
+toby
 
-$ posce list *ha* -r -s name
+$ posce list c* -r -s name
+claudia
 charlie
-alpha
 ~~~
 
 </details>
+
+#### `show NAME [-w]`
+
+Print a note's contents to the screen.
+
+| Argument            | Description         |
+| ------------------- | ------------------- |
+| `-w` `--wrap <int>` | Wrap text to width. |
+
+<details><summary>Example.</summary>
+
+~~~bash
+$ posce show claudia
+I had woot canal!
+
+$ posce show sam -w 40
+Over three and a half centuries ago,
+linked by faith and bound by a common
+desire for liberty, a small band of
+pilgrims sought out a place in the New
+World where they could worship according
+to their own beliefs... and solve
+crimes.
+~~~
+
 
 Contribution
 ------------
