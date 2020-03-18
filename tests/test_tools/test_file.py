@@ -41,7 +41,7 @@ def test_find(tmpdir):
     dire = tmpdir.join('find')
     dire.mkdir()
     for name in ['foo', 'bar', 'baz']:
-        dire.join(f'{name}.txt').write('test')
+        dire.join(f'{name}.txt').write(name)
 
     # success
     assert list(file.find(dire, 'ba?.txt')) == [
