@@ -2,7 +2,9 @@ Changelog
 =========
 
 ## Unreleased
-
+### Added
+- Basic application libraries.
+- New commands: `list`.
 
 ## [0.0.0] · 2020-03-18
 ### Added
