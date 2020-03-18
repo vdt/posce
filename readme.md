@@ -68,5 +68,5 @@ Bugs, suggestions, and feature requests are welcome! Please add them to the [iss
 [ch]: https://github.com/posce/posce/blob/master/changes.md
 [is]: https://github.com/posce/posce/issues
 [li]: https://github.com/posce/posce/blob/master/license.md
-[re]: https://github.com/posce/posce/releases
+[re]: https://github.com/posce/posce/releases/latest
 [py]: https://python.org
