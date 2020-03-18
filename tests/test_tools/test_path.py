@@ -30,7 +30,7 @@ def test_ext():
 
 def test_join():
     # success
-    assert path.join('one', 'two', 'file.ext') == s('one/two/file.ext')
+    assert path.join('foo', 'bar', 'file.ext') == s('foo/bar/file.ext')
 
 def test_name():
     # success
