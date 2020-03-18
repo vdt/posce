@@ -2,8 +2,10 @@ Changelog
 =========
 
 ## Unreleased
+
+## [0.1.0] · 2020-03-18
 ### Added
-- Basic application libraries.
+- Basic application code.
 - New commands: `list`.
 
 ## [0.0.0] · 2020-03-18
@@ -12,4 +14,5 @@ Changelog
 
 
 [Unreleased]: https://github.com/posce/posce/commits/master
+[0.1.0]:      https://github.com/posce/posce/commits/0.1.0
 [0.0.0]:      https://github.com/posce/posce/commits/0.0.0
