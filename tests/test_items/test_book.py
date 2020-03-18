@@ -64,6 +64,10 @@ def test_create(book):
     assert note.read() == 'test'
     assert os.path.dirname(note.path) == book.dire
 
+def test_disambiguate(book):
+    # success
+    assert set(book.disambiguate('al')) == {book['alpha']}
+
 def test_exists(book):
     # success
     assert     book.exists()

@@ -2,6 +2,8 @@
 Class definition for 'Book'.
 '''
 
+import click
+
 from posce.items.note import Note
 from posce            import tools
 
@@ -86,6 +88,14 @@ class Book:
         tools.file.create(dest, string)
         self.notes[name] = Note(dest)
         return self.notes[name]
+
+    def disambiguate(self, name):
+        '''
+        Yield each Note matching an abbreviated name.
+        '''
+
+        key = lambda note: note.name.startswith(name)
+        yield from self.filter(key)
 
     def exists(self):
         '''
