@@ -51,10 +51,10 @@ def test_len(book):
 
 def test_repr(book):
     # setup
-    book.dire = '/dir'
+    book.dire = '/dire'
 
     # success
-    assert repr(book) == "Book('/dir', 'txt')"
+    assert repr(book) == "Book('/dire', 'txt')"
 
 def test_create(book):
     # success

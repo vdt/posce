@@ -43,10 +43,10 @@ def test_len(note):
 
 def test_repr(note):
     # setup
-    note.path = '/dir/foo.txt'
+    note.path = '/dire/foo.txt'
 
     # success
-    assert repr(note) == "Note('/dir/foo.txt')"
+    assert repr(note) == "Note('/dire/foo.txt')"
 
 def test_append(note):
     # success

@@ -11,7 +11,7 @@ def s(path):
 
 def test_base():
     # success
-    assert path.base('/dir/file.txt') == 'file.txt'
+    assert path.base('/dire/file.txt') == 'file.txt'
 
 def test_clean():
     # success
@@ -26,7 +26,7 @@ def test_expand():
 
 def test_ext():
     # success
-    assert path.ext('/dir/file.txt') == 'txt'
+    assert path.ext('/dire/file.txt') == 'txt'
 
 def test_join():
     # success
@@ -34,4 +34,4 @@ def test_join():
 
 def test_name():
     # success
-    assert path.name('/dir/file.txt') == 'file'
+    assert path.name('/dire/file.txt') == 'file'
