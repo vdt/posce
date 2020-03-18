@@ -32,12 +32,33 @@ On macOS and Linux, these variables can be set in your shell profile script, mos
 Usage
 -----
 
-***TODO.***
+### Commands
 
-Commands
---------
+Optional arguments are marked with `[brackets]`, choices are in `(parentheses)`.
 
-***TODO.***
+#### `list [GLOB] [-rs]`
+
+List all notes, or notes matching `GLOB` (default `*`).
+
+| Argument                   | Description            |
+| -------------------------- | ---------------------- |
+| `-r` `--reverse`           | Reverse sort order.    |
+| `-s` `--sort (name\|size)` | Sort notes by element. |
+
+<details><summary>Example.</summary>
+
+~~~bash
+$ posce list
+alpha
+bravo
+charlie
+
+$ posce list *ha* -r -s name
+charlie
+alpha
+~~~
+
+</details>
 
 Contribution
 ------------
