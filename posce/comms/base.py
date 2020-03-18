@@ -6,7 +6,11 @@ import click
 
 from posce.items import Book
 
-@click.group()
+SETTINGS = {
+    'help_option_names': ['-h', '--help'],
+}
+
+@click.group(context_settings=SETTINGS)
 @click.option('--dire', envvar='POSCE_DIR', hidden=True)
 @click.option('--ext',  envvar='POSCE_EXT', hidden=True)
 @click.pass_context
