@@ -1,0 +1,3 @@
+'''
+Package definition for 'tests'.
+'''
