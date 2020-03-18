@@ -1,7 +1,12 @@
 Posce
 =====
 
-**Posce** is a note-taking toolkit for your command line. It takes a single directory of plaintext note files and lets you create, edit, manipulate, and organise them to your heart's content.
+[![](https://img.shields.io/pypi/pyversions/posce)][py]
+[![](https://img.shields.io/pypi/v/posce)][pp]
+[![](https://img.shields.io/github/issues/posce/posce)][is]
+[![](https://img.shields.io/badge/license-bsd--3-brightgreen)][li]
+
+**Posce** (pronounced *posh·eee*) is a note-taking toolkit for your command line. It takes a single directory of plaintext note files and lets you create, edit, manipulate, and organise them to your heart's content.
 
 - See [changes.md][ch] for a complete changelog.
 - See [license.md][li] for licensing information.
@@ -69,4 +74,5 @@ Bugs, suggestions, and feature requests are welcome! Please add them to the [iss
 [is]: https://github.com/posce/posce/issues
 [li]: https://github.com/posce/posce/blob/master/license.md
 [re]: https://github.com/posce/posce/releases/latest
+[pp]: https://pypi.org/project/posce/
 [py]: https://python.org
