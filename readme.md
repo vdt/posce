@@ -95,10 +95,10 @@ Open a new or existing note in an editor.
 
 ~~~bash
 $ posce edit toby
-# Opens "toby.txt" in your default editor.
+# Open "toby.txt" in your default editor.
 
 $ posce edit leo -e notepad -n
-# Creates "leo.txt" and opens it in Notepad.
+# Create "leo.txt" and open it in Notepad.
 ~~~
 
 </details>
