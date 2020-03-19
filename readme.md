@@ -68,6 +68,27 @@ $ posce show j
 
 Required arguments are marked with `<angles>`, optional arguments with `[brackets]`, choices are in `(parentheses)`.
 
+#### `find TERM [-r]`
+
+List all notes containing a substring or matching a regular expression.
+
+| Argument       | Description                            | Default  |
+| -------------- | -------------------------------------- | -------- |
+| `-r` `--regex` | Use search term as regular expression. | disabled |
+
+<details><summary>Example.</summary>
+
+~~~bash
+$ posce find "jackass"
+josh
+toby
+
+$ posce find "It's on page \d{1,3}!" -r
+claudia
+~~~
+
+</details>
+
 #### `list [GLOB] [-rs]`
 
 List all notes, or notes matching `GLOB` (default `*`).

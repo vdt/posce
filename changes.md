@@ -4,7 +4,7 @@ Changelog
 ## Unreleased
 ### Added
 - Disambiguation for note names.
-- New commands: `show`.
+- New commands: `find`, `show`.
 
 
 ## [0.1.1] · 2020-03-18
