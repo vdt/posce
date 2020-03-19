@@ -35,3 +35,7 @@ def test_join():
 def test_name():
     # success
     assert path.name('/dire/file.txt') == 'file'
+
+def test_parent():
+    # success
+    assert path.parent('/dire/file.txt') == s('/dire')

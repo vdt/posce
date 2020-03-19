@@ -56,3 +56,10 @@ def name(path):
 
     base = os.path.basename(path)
     return os.path.splitext(base)[0]
+
+def parent(path):
+    '''
+    Return a path's parent directory.
+    '''
+
+    return os.path.normpath(os.path.dirname(path))
