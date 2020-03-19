@@ -2,6 +2,9 @@ Changelog
 =========
 
 ## Unreleased
+
+
+## [0.2.0] · 2020-03-19
 ### Added
 - Disambiguation for commands and note names.
 - New commands: `edit`, `find`, `show`.
@@ -24,6 +27,7 @@ Changelog
 
 
 [Unreleased]: https://github.com/posce/posce/commits/master
+[0.2.0]:      https://github.com/posce/posce/commits/0.2.0
 [0.1.1]:      https://github.com/posce/posce/commits/0.1.1
 [0.1.0]:      https://github.com/posce/posce/commits/0.1.0
 [0.0.0]:      https://github.com/posce/posce/commits/0.0.0
