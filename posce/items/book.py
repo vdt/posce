@@ -19,7 +19,7 @@ class Book:
         Initialise a new Book.
         '''
 
-        self.dire  = tools.path.expand(dire)
+        self.dire  = tools.path.expand(str(dire))
         self.ext   = str(ext)
         self.notes = {
             note.name: note for note in
