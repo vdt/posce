@@ -68,7 +68,7 @@ $ posce show j
 
 Required arguments are marked with `<angles>`, optional arguments with `[brackets]`, choices are in `(parentheses)`.
 
-#### `find TERM [-r]`
+#### `find <TERM> [-r]`
 
 List all notes containing a substring or matching a regular expression.
 
@@ -93,10 +93,10 @@ claudia
 
 List all notes, or notes matching `GLOB` (default `*`).
 
-| Argument                   | Description            | Default  |
-| -------------------------- | ---------------------- | -------- |
-| `-r` `--reverse`           | Reverse sort order.    | disabled |
-| `-s` `--sort (name\|size)` | Sort notes by element. | `name`   |
+| Argument                   | Description               | Default  |
+| -------------------------- | ------------------------- | -------- |
+| `-r` `--reverse`           | Reverse sort order.       | disabled |
+| `-s` `--sort (name\|size)` | Sort notes by this field. | `name`   |
 
 <details><summary>Example.</summary>
 
@@ -115,7 +115,7 @@ charlie
 
 </details>
 
-#### `show NAME [-w]`
+#### `show <NAME> [-w]`
 
 Print a note's raw contents to the screen.
 
