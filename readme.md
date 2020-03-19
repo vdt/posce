@@ -6,7 +6,7 @@ Posce
 [![](https://img.shields.io/github/issues/posce/posce)][is]
 [![](https://img.shields.io/badge/license-bsd--3-brightgreen)][li]
 
-**Posce** (pronounced *posh·eee*) is a note-taking toolkit for your command line. It takes a single directory of plaintext note files and lets you create, edit, manipulate, and organise them to your heart's content.
+**Posce** (pronounced *posh·ee*) is a note-taking toolkit for your command line. It takes a single directory of plaintext note files and lets you create, edit, manipulate, and organise them to your heart's content.
 
 - See [changes.md][ch] for a complete changelog.
 - See [license.md][li] for licensing information.
@@ -22,7 +22,7 @@ Posce required [Python 3.8][py] or higher. To install, you can:
 Configuration
 -------------
 
-Posce only requires two environment variables to be set:
+Posce only requires you to set two environment variables:
 
 ~~~bash
 # The path to your notes directory.
@@ -37,6 +37,33 @@ On macOS and Linux, these variables can be set in your shell profile script, mos
 Usage
 -----
 
+Posce always refers to your notes as pure names only, with no extension or filepath attached. These names are disambiguated, so you can use abbreviated versions and avoid typing the whole name.
+
+<details><summary>Example.</summary>
+
+If you have a directory that looks like this:
+
+~~~text
+- ~/notes
+    - josh.txt
+    - sam.txt
+    - toby.txt
+~~~
+
+Then Posce will work like this:
+
+~~~bash
+$ posce list
+josh
+sam
+toby
+
+$ posce show j
+"Toby, come quick, Sam's getting his ass kicked by a girl!"
+~~~
+
+</details>
+
 ### Commands
 
 Required arguments are marked with `<angles>`, optional arguments with `[brackets]`, choices are in `(parentheses)`.
@@ -45,10 +72,10 @@ Required arguments are marked with `<angles>`, optional arguments with `[bracket
 
 List all notes, or notes matching `GLOB` (default `*`).
 
-| Argument                   | Description            |
-| -------------------------- | ---------------------- |
-| `-r` `--reverse`           | Reverse sort order.    |
-| `-s` `--sort (name\|size)` | Sort notes by element. |
+| Argument                   | Description            | Default  |
+| -------------------------- | ---------------------- | -------- |
+| `-r` `--reverse`           | Reverse sort order.    | disabled |
+| `-s` `--sort (name\|size)` | Sort notes by element. | `name`   |
 
 <details><summary>Example.</summary>
 
@@ -69,28 +96,27 @@ charlie
 
 #### `show NAME [-w]`
 
-Print a note's contents to the screen.
+Print a note's raw contents to the screen.
 
-| Argument            | Description         |
-| ------------------- | ------------------- |
-| `-w` `--wrap <int>` | Wrap text to width. |
+| Argument            | Description                 | Default  |
+| ------------------- | --------------------------- | -------- |
+| `-w` `--wrap <int>` | Wrap text to width `<int>`. | disabled |
 
 <details><summary>Example.</summary>
 
 ~~~bash
 $ posce show claudia
-I had woot canal!
+"I had woot canal!"
 
 $ posce show sam -w 40
-Over three and a half centuries ago,
+"Over three and a half centuries ago,
 linked by faith and bound by a common
 desire for liberty, a small band of
 pilgrims sought out a place in the New
 World where they could worship according
 to their own beliefs... and solve
-crimes.
+crimes."
 ~~~
-
 
 Contribution
 ------------
