@@ -2,7 +2,8 @@ Changelog
 =========
 
 ## Unreleased
-
+### Changed
+- Renamed `--dire` option to `--dir`.
 
 ## [0.2.0] · 2020-03-19
 ### Added
