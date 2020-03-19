@@ -3,7 +3,7 @@ Changelog
 
 ## Unreleased
 ### Added
-- Disambiguation for note names.
+- Disambiguation for commands and note names.
 - New commands: `edit`, `find`, `show`.
 
 
