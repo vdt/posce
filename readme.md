@@ -68,13 +68,34 @@ $ posce show j
 
 Required arguments are marked with `<angles>`, optional arguments with `[brackets]`, choices are in `(parentheses)`.
 
+#### `edit <NAME> [-en]`
+
+Open a new or existing note in an editor.
+
+| Argument        | Description                          | Default         |
+| --------------- | ------------------------------------ | --------------- |
+| `-e` `--editor` | Open the note in this program.       | System default. |
+| `-n` `--new`    | Create the note if it doesn't exist. | Disabled.       |
+
+<details><summary>Example.</summary>
+
+~~~bash
+$ posce edit toby
+# Opens "toby.txt" in your default editor.
+
+$ posce edit leo -e notepad -n
+# Creates "leo.txt" and opens it in Notepad.
+~~~
+
+</details>
+
 #### `find <TERM> [-r]`
 
 List all notes containing a substring or matching a regular expression.
 
-| Argument       | Description                            | Default  |
-| -------------- | -------------------------------------- | -------- |
-| `-r` `--regex` | Use search term as regular expression. | disabled |
+| Argument       | Description                            | Default   |
+| -------------- | -------------------------------------- | --------- |
+| `-r` `--regex` | Use search term as regular expression. | Disabled. |
 
 <details><summary>Example.</summary>
 
@@ -93,10 +114,10 @@ claudia
 
 List all notes, or notes matching `GLOB` (default `*`).
 
-| Argument                   | Description               | Default  |
-| -------------------------- | ------------------------- | -------- |
-| `-r` `--reverse`           | Reverse sort order.       | disabled |
-| `-s` `--sort (name\|size)` | Sort notes by this field. | `name`   |
+| Argument                   | Description               | Default   |
+| -------------------------- | ------------------------- | --------- |
+| `-r` `--reverse`           | Reverse sort order.       | Disabled. |
+| `-s` `--sort (name\|size)` | Sort notes by this field. | `name`    |
 
 <details><summary>Example.</summary>
 
@@ -119,9 +140,9 @@ charlie
 
 Print a note's raw contents to the screen.
 
-| Argument            | Description                 | Default  |
-| ------------------- | --------------------------- | -------- |
-| `-w` `--wrap <int>` | Wrap text to width `<int>`. | disabled |
+| Argument            | Description                 | Default   |
+| ------------------- | --------------------------- | --------- |
+| `-w` `--wrap <int>` | Wrap text to width `<int>`. | Disabled. |
 
 <details><summary>Example.</summary>
 

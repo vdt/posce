@@ -14,11 +14,11 @@ def disambiguate(book, name):
 
     notes = list(book.disambiguate(name))
 
-    if len(notes) == 1:
-        return notes[0]
-
-    elif len(notes) == 0:
+    if len(notes) == 0:
         error(f'Note {name!r} does not exist.')
+
+    elif len(notes) == 1:
+        return notes[0]
 
     elif len(notes) <= DYM_LIMIT:
         names = sorted(note.name for note in notes)
