@@ -61,7 +61,7 @@ def read(path):
 
 def reext(path, ext):
     '''
-    Move a file to a different extension.
+    Move a file to a different extension in the same directory.
     '''
 
     dire = os.path.dirname(path)
@@ -71,7 +71,7 @@ def reext(path, ext):
 
 def rename(path, name):
     '''
-    Move a file to a different name.
+    Move a file to a different name in the same directory.
     '''
 
     dire = os.path.dirname(path)
