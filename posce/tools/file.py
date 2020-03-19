@@ -4,6 +4,7 @@ File I/O and discovery functions.
 
 import glob
 import os
+import shutil
 
 OPTIONS = {
     'encoding': 'utf-8',
@@ -16,6 +17,16 @@ def append(path, string, *, sep='\n'):
 
     with open(path, 'a', **OPTIONS) as file:
         file.write(sep + string)
+
+def copy(path, name):
+    '''
+    Copy a file to another name in the same directory.
+    '''
+
+    dire = os.path.dirname(path)
+    ext  = os.path.splitext(path)[-1]
+    dest = os.path.join(dire, name + ext)
+    shutil.copyfile(path, dest)
 
 def create(path, string):
     '''
@@ -47,6 +58,26 @@ def read(path):
 
     with open(path, 'r', **OPTIONS) as file:
         return file.read()
+
+def reext(path, ext):
+    '''
+    Move a file to a different extension.
+    '''
+
+    dire = os.path.dirname(path)
+    name = os.path.splitext(os.path.basename(path))[0]
+    dest = os.path.join(dire, f'{name}.{ext}')
+    shutil.move(path, dest)
+
+def rename(path, name):
+    '''
+    Move a file to a different name.
+    '''
+
+    dire = os.path.dirname(path)
+    ext  = os.path.splitext(path)[-1].lstrip('.')
+    dest = os.path.join(dire, f'{name}.{ext}')
+    shutil.move(path, dest)
 
 def write(path, string):
     '''

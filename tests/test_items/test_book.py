@@ -12,6 +12,7 @@ from posce.items.book import Book
 def book(tmpdir):
     dire = tmpdir.join('book')
     dire.mkdir()
+
     for n, name in enumerate(['alpha', 'bravo', 'charlie']):
         dire.join(f'{name}.txt').write(name * (n+1))
     return Book(dire, 'txt')

@@ -15,6 +15,16 @@ def test_append(tmpdir):
     file.append(path, 'charlie', sep='\n')
     assert path.read() == 'alpha\nbravo\ncharlie'
 
+def test_copy(tmpdir):
+    # setup
+    path = tmpdir.join('copy.txt')
+    path.write('')
+
+    # success
+    file.copy(path, 'dest')
+    assert path.exists()
+    assert tmpdir.join('dest.txt').exists()
+
 def test_create(tmpdir):
     # setup
     path = tmpdir.join('create.txt')
@@ -30,7 +40,7 @@ def test_create(tmpdir):
 def test_exists(tmpdir):
     # setup
     path = tmpdir.join('exists.txt')
-    path.write('test')
+    path.write('')
 
     # success
     assert     file.exists(path)
@@ -40,6 +50,7 @@ def test_find(tmpdir):
     # setup
     dire = tmpdir.join('find')
     dire.mkdir()
+
     for name in ['alpha', 'bravo', 'charlie']:
         dire.join(f'{name}.txt').write('test')
 
@@ -56,6 +67,26 @@ def test_read(tmpdir):
 
     # success
     assert file.read(path) == 'test'
+
+def test_reext(tmpdir):
+    # setup
+    path = tmpdir.join('reext.txt')
+    path.write('')
+
+    # success
+    file.reext(path, 'new')
+    assert not path.exists()
+    assert     tmpdir.join('reext.new').exists()
+
+def test_rename(tmpdir):
+    # setup
+    path = tmpdir.join('rename.txt')
+    path.write('')
+
+    # success
+    file.rename(path, 'dest')
+    assert not path.exists()
+    assert     tmpdir.join('dest.txt').exists()
 
 def test_write(tmpdir):
     # setup
