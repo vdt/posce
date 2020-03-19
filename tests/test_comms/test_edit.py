@@ -45,5 +45,5 @@ def test_edit(monkeypatch, book):
 
     # failure - ambiguous
     assert out(book, edit, 'bravo') == [
-        "Error: Ambiguous name. Did you mean: 'bravo', 'bravo2'?\n",
+        "Error: Ambiguous note name. Did you mean: 'bravo', 'bravo2'?\n",
     ]

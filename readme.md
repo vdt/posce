@@ -37,7 +37,7 @@ On macOS and Linux, these variables can be set in your shell profile script, mos
 Usage
 -----
 
-Posce always refers to your notes as pure names only, with no extension or filepath attached. These names are disambiguated, so you can use abbreviated versions and avoid typing the whole name.
+Notes are always referred to by their pure name, no extension or filepath. In addition, notes and commands are disambiguated, which means you can write abbreviated versions and — if it's unambiguous — Posce will automatically expand them for you.
 
 <details><summary>Example.</summary>
 
@@ -50,7 +50,7 @@ If you have a directory that looks like this:
     - toby.txt
 ~~~
 
-Then Posce will work like this:
+Then your notes will look like this:
 
 ~~~bash
 $ posce list
@@ -61,6 +61,20 @@ toby
 $ posce show j
 "Toby, come quick, Sam's getting his ass kicked by a girl!"
 ~~~
+
+And you can abbreviate commands like this:
+
+~~~bash
+$ posce l
+josh
+sam
+toby
+
+$ posce s j
+"Toby, come quick, Sam's getting his ass kicked by a girl!"
+~~~
+
+I recommend aliasing `posce` to `p` for maximum brevity.
 
 </details>
 

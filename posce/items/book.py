@@ -91,7 +91,7 @@ class Book:
 
     def disambiguate(self, name):
         '''
-        Yield each Note matching an abbreviated name.
+        Yield each Note matching an unambiguous name.
         '''
 
         key = lambda note: note.name.startswith(name)
