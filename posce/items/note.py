@@ -75,6 +75,13 @@ class Note:
 
         tools.file.append(self.path, string, sep=sep)
 
+    def copy(self, name):
+        '''
+        Copy the Note to another name in the same directory.
+        '''
+
+        tools.file.copy(self.path, name)
+
     def exists(self):
         '''
         Return True if the Note's path exists.
@@ -95,6 +102,20 @@ class Note:
         '''
 
         return tools.file.read(self.path)
+
+    def reext(self, ext):
+        '''
+        Move the Note to a different extension in the same directory.
+        '''
+
+        tools.file.reext(self.path, ext)
+
+    def rename(self, name):
+        '''
+        Move the Note to a different name in the same directory.
+        '''
+
+        tools.file.rename(self.path, name)
 
     def search(self, pattern):
         '''

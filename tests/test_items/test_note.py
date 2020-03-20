@@ -2,6 +2,8 @@
 Tests for 'posce.items.note'.
 '''
 
+import os.path
+
 import pytest
 
 from posce.items.note import Note
@@ -53,6 +55,15 @@ def test_append(note):
     note.append('charlie', sep='\n')
     assert open(note.path).read() == 'alpha\nbravo\ncharlie'
 
+def test_copy(note):
+    # setup
+    dest = note.path.replace('alpha', 'test')
+
+    # success
+    note.copy('test')
+    assert os.path.exists(dest)
+    assert os.path.exists(note.path)
+
 def test_exists(note):
     # success
     assert     note.exists()
@@ -62,6 +73,24 @@ def test_match(note):
     # success
     assert     note.match('a*')
     assert not note.match('n*pe')
+
+def test_reext(note):
+    # setup
+    dest = note.path.replace('txt', 'test')
+
+    # success
+    note.reext('test')
+    assert     os.path.exists(dest)
+    assert not os.path.exists(note.path)
+
+def test_rename(note):
+    # setup
+    dest = note.path.replace('alpha', 'test')
+
+    # success
+    note.rename('test')
+    assert     os.path.exists(dest)
+    assert not os.path.exists(note.path)
 
 def test_read(note):
     # success
