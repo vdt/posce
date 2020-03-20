@@ -21,4 +21,4 @@ def group(ctx, dir, ext):
     See github.com/posce/posce for help and issues.
     '''
 
-    ctx.obj = Book(dir, ext)
+    ctx.obj = Book(dir, ext.lstrip('.'))
