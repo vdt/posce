@@ -7,6 +7,7 @@ import os.path
 import pytest
 
 from posce.items.book import Book
+from posce.items.note import Note
 
 @pytest.fixture
 def book(tmpdir):
@@ -66,8 +67,17 @@ def test_create(book):
     assert os.path.dirname(note.path) == book.dire
 
 def test_disambiguate(book):
-    # success
+    # setup
+    book.notes['bravo2'] = Note('bravo2')
+
+    # success - unique name
     assert set(book.disambiguate('al')) == {book['alpha']}
+
+    # success - exact match
+    assert set(book.disambiguate('bravo')) == {book['bravo']}
+
+    # success - partial match
+    assert set(book.disambiguate('brav')) == {book['bravo'], book['bravo2']}
 
 def test_exists(book):
     # success

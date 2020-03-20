@@ -42,8 +42,3 @@ def test_edit(monkeypatch, book):
     assert out(book, edit, 'new2') == [
         "Error: Note 'new2' does not exist.\n",
     ]
-
-    # failure - ambiguous
-    assert out(book, edit, 'bravo') == [
-        "Error: Ambiguous note name. Did you mean: 'bravo', 'bravo2'?\n",
-    ]

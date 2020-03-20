@@ -94,8 +94,12 @@ class Book:
         Yield each Note matching an unambiguous name.
         '''
 
-        key = lambda note: note.name.startswith(name)
-        yield from self.filter(key)
+        func  = lambda note: note.name.startswith(name)
+        names = [note.name for note in self.filter(func)]
+        if name in names:
+            return [self.notes[name]]
+        else:
+            return [self.notes[name] for name in names]
 
     def exists(self):
         '''

@@ -5,8 +5,9 @@ Tests for 'posce.tools.clui'.
 import click
 import pytest
 
-from posce.tools                import clui
-from tests.test_items.test_book import book
+from posce.tools      import clui
+from posce.items.book import Book
+from posce.items.note import Note
 
 def test_CustomGroup():
     # setup
@@ -36,11 +37,15 @@ def test_CustomGroup():
         group.get_command(ctx, 'bravo')
     exc.match("Ambiguous command. Did you mean: 'bravo', 'bravo2'?")
 
-def test_disambiguate(book):
+def test_disambiguate():
     # setup
-    book.notes['bravo2'] = book['bravo']
-    for n in range(clui.DYM_LIMIT):
-        book.notes[f'charlie{n}'] = book['charlie']
+    book = Book('/test', 'txt')
+
+    for name in ['alpha', 'bravo1', 'bravo2']:
+        book.notes[name] = Note(name)
+
+    for n in range(clui.DYM_LIMIT+1):
+        book.notes[f'charlie{n}'] = Note(f'charlie{n}')
 
     # success - one match
     assert clui.disambiguate(book, 'al') == book['alpha']
@@ -53,7 +58,7 @@ def test_disambiguate(book):
     # failure - multiple notes, less than DYM_LIMIT
     with pytest.raises(click.ClickException) as exc:
         clui.disambiguate(book, 'bravo')
-    exc.match("Ambiguous note name. Did you mean: 'bravo', 'bravo2?'")
+    exc.match("Ambiguous note name. Did you mean: 'bravo1', 'bravo2?'")
 
     # failure - multiple notes, more than DYM_LIMIT
     with pytest.raises(click.ClickException) as exc:
