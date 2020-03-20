@@ -187,6 +187,21 @@ to their own beliefs... and solve
 crimes."
 ~~~
 
+</details>
+
+#### `version`
+
+Print the current Posce version to the screen.
+
+<details><summary>Example.</summary>
+
+~~~bash
+$ posce version
+Posce version X.Y.Z (YYYY-MM-DD).
+~~~
+
+</details>
+
 Contribution
 ------------
 

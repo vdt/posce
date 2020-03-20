@@ -8,3 +8,4 @@ from posce.comms import edit
 from posce.comms import find
 from posce.comms import list
 from posce.comms import show
+from posce.comms import version
