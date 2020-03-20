@@ -82,6 +82,19 @@ I recommend aliasing `posce` to `p` for maximum brevity.
 
 Required arguments are marked with `<angles>`, optional arguments with `[brackets]`, choices are in `(parentheses)`.
 
+#### `copy <NAME> <DEST>`
+
+Copy a note to another file in the same directory.
+
+<details><summary>Example.</summary>
+
+~~~bash
+$ posce copy ed larry
+# Copy "ed.txt" to "larry.txt" in your notes directory.
+~~~
+
+</details>
+
 #### `edit <NAME> [-en]`
 
 Open a new or existing note in an editor.
