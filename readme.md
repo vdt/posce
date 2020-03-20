@@ -90,7 +90,7 @@ Copy a note to another file in the same directory.
 
 ~~~bash
 $ posce copy ed larry
-# Copy "ed.txt" to "larry.txt" in your notes directory.
+# Copy "ed.txt" to "larry.txt".
 ~~~
 
 </details>
