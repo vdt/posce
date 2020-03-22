@@ -1,19 +1,19 @@
 '''
-Click command function 'copy'.
+Click command function 'move'.
 '''
 
 import click
 
-from posce.comms.base import group
 from posce            import tools
+from posce.comms.base import group
 
 @group.command()
 @click.argument('name')
 @click.argument('dest')
 @click.pass_obj
-def copy(book, name, dest):
+def move(book, name, dest):
     '''
-    Copy a note.
+    Move a note.
     '''
 
     note = tools.clui.disambiguate(book, name)
@@ -21,4 +21,4 @@ def copy(book, name, dest):
     if dest in book:
         tools.clui.error(f'Note {dest!r} already exists.')
     else:
-        note.copy(dest)
+        note.rename(dest)

@@ -162,6 +162,19 @@ charlie
 
 </details>
 
+#### `move <NAME> <DEST>`
+
+Move a note to another file in the same directory.
+
+<details><summary>Example.</summary>
+
+~~~bash
+$ posce move claudia cj
+# Move "claudia.txt" to "cj.txt".
+~~~
+
+</details>
+
 #### `show <NAME> [-w]`
 
 Print a note's raw contents to the screen.
