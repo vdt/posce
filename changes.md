@@ -3,7 +3,7 @@ Changelog
 
 ## Unreleased
 ### Added
-- New commands: `copy`, `move`.
+- New commands: `copy`, `move`, `repl` (hidden).
 - New option `-v --version` to show current version.
 
 ### Changed

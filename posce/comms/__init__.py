@@ -8,4 +8,5 @@ from posce.comms import edit
 from posce.comms import find
 from posce.comms import list
 from posce.comms import move
+from posce.comms import repl
 from posce.comms import show
