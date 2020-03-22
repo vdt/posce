@@ -3,7 +3,8 @@ Changelog
 
 ## Unreleased
 ### Added
-- New commands: `copy`, `version`.
+- New commands: `copy`.
+- New option `-v --version` to show current version.
 
 ### Changed
 - Renamed `--dire` option to `--dir`.
