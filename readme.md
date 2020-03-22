@@ -99,10 +99,9 @@ $ posce copy ed larry
 
 Open a new or existing note in an editor.
 
-| Argument        | Description                          | Default         |
-| --------------- | ------------------------------------ | --------------- |
-| `-e` `--editor` | Open the note in this program.       | System default. |
-| `-n` `--new`    | Create the note if it doesn't exist. | Disabled.       |
+| Argument        | Description                | Default         |
+| --------------- | -------------------------- | --------------- |
+| `-e` `--editor` | Open note in this program. | System default. |
 
 <details><summary>Example.</summary>
 
@@ -110,8 +109,8 @@ Open a new or existing note in an editor.
 $ posce edit toby
 # Open "toby.txt" in your default editor.
 
-$ posce edit leo -e notepad -n
-# Create "leo.txt" and open it in Notepad.
+$ posce edit toby -e notepad
+# Open "toby.txt" in Notepad.
 ~~~
 
 </details>

@@ -9,6 +9,9 @@ Changelog
 ### Changed
 - Renamed `--dire` option to `--dir`.
 
+### Removed
+- Removed `-n --new` option from `edit` command.
+
 
 ## [0.2.0] · 2020-03-19
 ### Added
