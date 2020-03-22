@@ -24,7 +24,7 @@ def mock(book, arg):
 
 def test_group(book):
     # success
-    assert out(book, mock, 'test') == [book.dire + '\n', 'test\n']
+    assert out(book, mock, 'test') == [f'{book.dire}\n', 'test\n']
 
     # success - version callback
-    assert out(book, mock, '-v') == [VERSION_STRING + '\n']
+    assert out(book, mock, '-v') == [f'{VERSION_STRING}\n']
