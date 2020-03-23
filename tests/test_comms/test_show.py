@@ -10,12 +10,12 @@ def test_show(book):
     # setup
     book['bravo'].write('test ' * 25)
 
-    # success - defaults
+    # success: defaults
     assert out(book, show, 'alpha') == [
         'alpha\n',
     ]
 
-    # success - wrap
+    # success: --wrap 40
     assert out(book, show, 'bravo', '-w', 40) == [
         'test test test test test test test test\n',
         'test test test test test test test test\n',

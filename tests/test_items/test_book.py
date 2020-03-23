@@ -70,13 +70,13 @@ def test_disambiguate(book):
     # setup
     book.notes['bravo2'] = Note('bravo2')
 
-    # success - unique name
+    # success: unique name
     assert set(book.disambiguate('al')) == {book['alpha']}
 
-    # success - exact match
+    # success: exact match
     assert set(book.disambiguate('bravo')) == {book['bravo']}
 
-    # success - partial match
+    # success: partial match
     assert set(book.disambiguate('brav')) == {book['bravo'], book['bravo2']}
 
 def test_exists(book):

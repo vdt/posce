@@ -26,5 +26,5 @@ def test_group(book):
     # success
     assert out(book, mock, 'test') == [f'{book.dire}\n', 'test\n']
 
-    # success - version callback
+    # success: version callback
     assert out(book, mock, '-v') == [f'{VERSION_STRING}\n']

@@ -12,12 +12,12 @@ def test_move(book):
     # setup
     dest = book['alpha'].path.replace('alpha', 'dest')
 
-    # success - defaults
+    # success: defaults
     assert out(book, move, 'alpha', 'dest') == []
     assert     os.path.exists(dest)
     assert not os.path.exists(book['alpha'].path)
 
-    # failure - dest exists
+    # failure: dest exists
     assert out(book, move, 'bravo', 'charlie') == [
         "Error: Note 'charlie' already exists.\n",
     ]

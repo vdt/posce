@@ -33,7 +33,7 @@ def test_create(tmpdir):
     file.create(path, 'test')
     assert path.read() == 'test'
 
-    # failure - file exists
+    # failure: file exists
     with pytest.raises(FileExistsError):
         file.create(path, 'test')
 

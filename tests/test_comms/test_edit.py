@@ -13,7 +13,7 @@ def test_edit(monkeypatch, book):
     editargs = {}
     monkeypatch.setattr(click, 'edit', lambda **k: editargs.update(k))
 
-    # success - defaults
+    # success: defaults
     assert out(book, edit, 'alpha') == []
     assert editargs == {
         'editor':    None,
@@ -21,7 +21,7 @@ def test_edit(monkeypatch, book):
         'filename':  book['alpha'].path,
     }
 
-    # success - custom editor
+    # success: --editor
     assert out(book, edit, 'alpha', '-e', 'test') == []
     assert editargs == {
         'editor':    'test',

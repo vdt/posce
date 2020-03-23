@@ -7,19 +7,19 @@ from tests.test_items.test_book import book
 from tests.tools                import out
 
 def test_list(book):
-    # success - defaults
+    # success: defaults
     assert out(book, list) == [
         'alpha\n',
         'bravo\n',
         'charlie\n',
     ]
 
-    # success - glob pattern
+    # success: GLOB
     assert out(book, list, 'a*') == [
         'alpha\n',
     ]
 
-    # success - sort by size, reversed
+    # success: --reverse --sort size
     assert out(book, list, '-r', '-s', 'size') == [
         'charlie\n',
         'bravo\n',

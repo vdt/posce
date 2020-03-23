@@ -15,7 +15,7 @@ def test_repl(monkeypatch, book):
     codeargs = {}
     monkeypatch.setattr(code, 'interact', lambda **k: codeargs.update(k))
 
-    # success
+    # success: defaults
     assert out(book, repl) == []
     assert codeargs == {
         'banner':  VERSION_STRING,
