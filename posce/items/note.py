@@ -12,7 +12,7 @@ class Note:
     A single plaintext note file.
     '''
 
-    __slots__ = ['ext', 'name', 'path']
+    __slots__ = ['base', 'ext', 'name', 'path']
 
     def __init__(self, path):
         '''
@@ -20,6 +20,7 @@ class Note:
         '''
 
         self.path = str(path)
+        self.base = tools.path.base(self.path)
         self.ext  = tools.path.ext(self.path)
         self.name = tools.path.name(self.path)
 

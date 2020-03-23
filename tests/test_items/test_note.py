@@ -17,6 +17,7 @@ def note(tmpdir):
 def test_init(note):
     # success
     assert note.path.endswith('alpha.txt')
+    assert note.base == 'alpha.txt'
     assert note.ext  == 'txt'
     assert note.name == 'alpha'
 
