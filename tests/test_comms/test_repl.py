@@ -10,7 +10,7 @@ from posce.comms.repl           import repl
 from tests.test_items.test_book import book
 from tests.tools                import out
 
-def test_repl(monkeypatch, book):
+def test_repl(book, monkeypatch):
     # setup
     codeargs = {}
     monkeypatch.setattr(code, 'interact', lambda **k: codeargs.update(k))

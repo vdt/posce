@@ -182,6 +182,26 @@ charlie
 
 </details>
 
+#### `make <NAME> [-f]`
+
+Create a new note.
+
+| Argument      | Description            | Default   |
+| ------------- | ---------------------- | --------- |
+| `-f` `--file` | Copy note from a file. | Disabled. |
+
+<details><summary>Example.</summary>
+
+~~~bash
+$ posce make mandy
+# Create empty note "mandy.txt".
+
+$ posce make mandy -f ~/resume.txt
+# Create note "mandy.txt" with contents from "~/resume.txt".
+~~~
+
+</details>
+
 #### `move <NAME> <DEST>`
 
 Move an existing note to a different name.

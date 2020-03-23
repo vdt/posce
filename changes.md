@@ -2,6 +2,8 @@ Changelog
 =========
 
 ## Unreleased
+### Added
+- New commands: `make`.
 
 
 ## [0.3.0] · 2020-03-24

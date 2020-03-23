@@ -8,7 +8,7 @@ from posce.comms.edit           import edit
 from tests.test_items.test_book import book
 from tests.tools                import out
 
-def test_edit(monkeypatch, book):
+def test_edit(book, monkeypatch):
     # setup
     editargs = {}
     monkeypatch.setattr(click, 'edit', lambda **k: editargs.update(k))
