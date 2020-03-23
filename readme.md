@@ -95,6 +95,26 @@ $ posce copy ed larry
 
 </details>
 
+#### `dump <DEST> [-l]`
+
+Create a zip archive of your notes directory.
+
+| Argument        | Description                     | Default |
+| --------------- | ------------------------------- | ------- |
+| `-l` `--level` | Compression level (from 0 to 9). | `5`.    |
+
+<details><summary>Example.</summary>
+
+~~~bash
+$ posce dump notes.zip
+# Create "notes.zip" in current directory.
+
+$ posce dump notes.zip -l 9
+# Create "notes.zip" with maximum compression.
+~~~
+
+</details>
+
 #### `edit <NAME> [-en]`
 
 Edit an existing note.
@@ -143,7 +163,7 @@ List all notes, or notes matching `GLOB` (default `*`).
 | Argument                   | Description               | Default   |
 | -------------------------- | ------------------------- | --------- |
 | `-r` `--reverse`           | Reverse sort order.       | Disabled. |
-| `-s` `--sort (name\|size)` | Sort notes by this field. | `name`    |
+| `-s` `--sort (name\|size)` | Sort notes by this field. | `name`.   |
 
 <details><summary>Example.</summary>
 
