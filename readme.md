@@ -84,7 +84,7 @@ Required arguments are marked with `<angles>`, optional arguments with `[bracket
 
 #### `copy <NAME> <DEST>`
 
-Copy a note to another file in the same directory.
+Copy an existing note to a different name.
 
 <details><summary>Example.</summary>
 
@@ -97,7 +97,7 @@ $ posce copy ed larry
 
 #### `edit <NAME> [-en]`
 
-Open a new or existing note in an editor.
+Edit an existing note.
 
 | Argument        | Description                | Default         |
 | --------------- | -------------------------- | --------------- |
@@ -164,7 +164,7 @@ charlie
 
 #### `move <NAME> <DEST>`
 
-Move a note to another file in the same directory.
+Move an existing note to a different name.
 
 <details><summary>Example.</summary>
 
@@ -177,7 +177,7 @@ $ posce move claudia cj
 
 #### `show <NAME> [-w]`
 
-Print a note's raw contents to the screen.
+Print an existing note's contents.
 
 | Argument            | Description                 | Default   |
 | ------------------- | --------------------------- | --------- |
@@ -200,6 +200,20 @@ crimes."
 ~~~
 
 </details>
+
+#### `wget <NAME> <URL>`
+
+Download a URL to an existing note.
+
+<details><summary>Example.</summary>
+
+~~~bash
+$ posce copy josh lemon-lyman.com
+# Download "http://lemon-lyman.com" to "josh.txt".
+~~~
+
+</details>
+
 
 Contribution
 ------------

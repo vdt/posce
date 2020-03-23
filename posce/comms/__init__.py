@@ -10,3 +10,4 @@ from posce.comms import list
 from posce.comms import move
 from posce.comms import repl
 from posce.comms import show
+from posce.comms import wget
