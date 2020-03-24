@@ -7,13 +7,13 @@ import click
 from posce.comms.base import group
 from posce            import tools
 
-@group.command()
+@group.command(short_help='Copy note.')
 @click.argument('name')
 @click.argument('dest')
 @click.pass_obj
 def copy(book, name, dest):
     '''
-    Copy a note.
+    Copy note NAME to new note DEST.
     '''
 
     note = tools.clui.disambiguate(book, name)

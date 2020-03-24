@@ -6,7 +6,7 @@ import click
 
 from posce.comms.base import group
 
-@group.command()
+@group.command(short_help='List notes.')
 @click.argument('glob',
     default = '*',
 )
@@ -15,14 +15,14 @@ from posce.comms.base import group
     is_flag = True,
 )
 @click.option('-s', '--sort',
-    help    = 'Sort notes by element.',
+    help    = 'Sort notes by attribute.',
     default = 'name',
     type    = click.Choice(['name', 'size']),
 )
 @click.pass_obj
 def list(book, glob, sort, reverse):
     '''
-    List all notes.
+    List all notes matching GLOB (default "*").
     '''
 
     key = {

@@ -11,18 +11,18 @@ import click
 from posce.comms.base import group
 from posce            import tools
 
-@group.command()
-@click.argument('dest')
+@group.command(short_help='Archive notes.')
+@click.argument('file')
 @click.option('-l', '--level',
     help    = 'Compression level (0-9).',
     default = 5,
-    metavar = 'LEVEL',
+    metavar = 'INT',
     type    = click.IntRange(0, 9),
 )
 @click.pass_obj
-def dump(book, dest, level):
+def dump(book, file, level):
     '''
-    Create note archive.
+    Create notes archive at FILE.
     '''
 
     opts = {
@@ -30,6 +30,6 @@ def dump(book, dest, level):
         'compresslevel': level,
     }
 
-    with zipfile.ZipFile(dest, 'w', **opts) as zipf:
+    with zipfile.ZipFile(file, 'w', **opts) as zipf:
         for note in book:
             zipf.write(note.path, note.base)

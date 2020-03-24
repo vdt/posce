@@ -8,16 +8,16 @@ import click
 
 from posce.comms.base import group
 
-@group.command()
+@group.command(short_help='Search notes.')
 @click.argument('term')
 @click.option('-r', '--regex',
-    help    = 'Use regular expressions.',
+    help    = 'Use term as regular expression.',
     is_flag = True,
 )
 @click.pass_obj
 def find(book, term, regex):
     '''
-    Search all notes.
+    List all notes matching TERM.
     '''
 
     term = term if regex else re.escape(term)

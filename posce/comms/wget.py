@@ -10,13 +10,13 @@ import click
 from posce            import tools
 from posce.comms.base import group
 
-@group.command()
+@group.command(short_help='Download note.')
 @click.argument('name')
 @click.argument('url')
 @click.pass_obj
 def wget(book, name, url):
     '''
-    Download a note from a URL.
+    Download URL into note NAME.
     '''
 
     note = tools.clui.disambiguate(book, name)

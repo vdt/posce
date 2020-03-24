@@ -9,17 +9,18 @@ import click
 from posce.comms.base import group
 from posce            import tools
 
-@group.command()
+@group.command(short_help='Print note.')
 @click.argument('name')
 @click.option('-w', '--wrap',
-    help    = 'Wrap text to width.',
+    help    = 'Wrap text to column width.',
     default = 0,
+    metavar = 'COLS',
     type    = int,
 )
 @click.pass_obj
 def show(book, name, wrap):
     '''
-    Print a note.
+    Print contents of note NAME.
     '''
 
     note = tools.clui.disambiguate(book, name)

@@ -8,12 +8,12 @@ import send2trash
 from posce.comms.base import group
 from posce            import tools
 
-@group.command()
+@group.command(short_help='Trash note.')
 @click.argument('name')
 @click.pass_obj
 def drop(book, name):
     '''
-    Move a note to trash.
+    Move note NAME to trash.
     '''
 
     note = tools.clui.disambiguate(book, name)

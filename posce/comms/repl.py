@@ -9,7 +9,7 @@ import click
 from posce            import VERSION_STRING
 from posce.comms.base import group
 
-@group.command(hidden=True)
+@group.command(hidden=True, short_help='Open REPL.')
 @click.pass_obj
 def repl(book):
     '''

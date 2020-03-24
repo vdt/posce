@@ -7,13 +7,13 @@ import click
 from posce            import tools
 from posce.comms.base import group
 
-@group.command()
+@group.command(short_help='Move note.')
 @click.argument('name')
 @click.argument('dest')
 @click.pass_obj
 def move(book, name, dest):
     '''
-    Move a note.
+    Move note NAME to new note DEST.
     '''
 
     note = tools.clui.disambiguate(book, name)

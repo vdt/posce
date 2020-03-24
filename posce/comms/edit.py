@@ -7,17 +7,17 @@ import click
 from posce.comms.base import group
 from posce            import tools
 
-@group.command()
+@group.command(short_help='Edit note.')
 @click.argument('name')
 @click.option('-e', '--editor',
-    help    = 'Editor program to open in.',
+    help    = 'Editor program to use.',
     metavar = 'PROG',
     type    = str,
 )
 @click.pass_obj
 def edit(book, name, editor):
     '''
-    Edit a note.
+    Open note NAME in editor.
     '''
 
     note = tools.clui.disambiguate(book, name)

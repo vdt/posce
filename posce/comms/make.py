@@ -7,16 +7,17 @@ import click
 from posce.comms.base import group
 from posce            import tools
 
-@group.command()
+@group.command(short_help='Create note.')
 @click.argument('name')
 @click.option('-f', '--file',
-    help    = 'Copy note from file.',
+    help    = 'Copy note from FILE.',
     default = '',
+    metavar = 'FILE',
 )
 @click.pass_obj
 def make(book, name, file):
     '''
-    Create a note.
+    Create new note NAME.
     '''
 
     if name in book:
