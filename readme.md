@@ -24,7 +24,7 @@ Table of Contents
     - [`dump FILE [-l]`](#dump-file--l)
     - [`edit NAME [-e]`](#edit-name--e)
     - [`find TERM [-r]`](#find-term--r)
-    - [`list [GLOB] [-rs]`](#list--glob--rs)
+    - [`list [GLOB] [-rs]`](#list-glob--rs)
     - [`make NAME [-f]`](#make-name--f)
     - [`move NAME DEST`](#move-name-dest)
     - [`show NAME [-w]`](#show-name--w)
