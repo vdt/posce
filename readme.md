@@ -82,6 +82,19 @@ I recommend aliasing `posce` to `p` for maximum brevity.
 
 Required arguments are marked with `<angles>`, optional arguments with `[brackets]`, choices are in `(parentheses)`.
 
+#### `clip <NAME>`
+
+Copy a note's contents to the system clipboard.
+
+<details><summary>Example.</summary>
+
+~~~bash
+$ posce clip charlie
+# Copy "charlie.txt" contents to system clipboard.
+~~~
+
+</details>
+
 #### `copy <NAME> <DEST>`
 
 Copy an existing note to a different name.

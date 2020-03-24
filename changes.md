@@ -3,7 +3,7 @@ Changelog
 
 ## Unreleased
 ### Added
-- New commands: `drop`, `make`.
+- New commands: `clip`, `drop`, `make`.
 
 
 ## [0.3.0] · 2020-03-24

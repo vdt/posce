@@ -6,6 +6,12 @@ from setuptools import find_packages, setup
 
 from posce import VERSION_NUMBER
 
+DEPENDENCIES = [
+    'click>=7.1.1',
+    'pyperclip>=1.7.0',
+    'Send2Trash>=1.5.0',
+]
+
 setup(
     # Basic information.
     name         = 'posce',
@@ -23,7 +29,7 @@ setup(
     # Package specifications.
     packages         = find_packages(exclude=['*tests*']),
     python_requires  = '>=3.8.0',
-    install_requires = ['click>=7.1.1', 'Send2Trash>=1.5.0'],
+    install_requires = DEPENDENCIES,
 
     # Console executables.
     entry_points = {
