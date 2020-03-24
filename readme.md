@@ -29,6 +29,7 @@ Table of Contents
     - [`move NAME DEST`](#move-name-dest)
     - [`show NAME [-w]`](#show-name--w)
     - [`wget NAME URL`](#wget-name-url)
+- [F.A.Q.](#faq)
 - [Contribution](#contribution)
 
 Installation
@@ -92,9 +93,12 @@ $ posce s c
 Charliiiiiiieeeeeee!
 ~~~
 
-### Commands
+I recommend aliasing `posce` to `p` for maximum brevity.
 
-#### `clip NAME`
+Commands
+--------
+
+### `clip NAME`
 
 Copy the existing note `NAME` to the clipboard.
 
@@ -103,7 +107,7 @@ $ posce clip alpha
 # Copy "alpha.txt" to clipboard.
 ~~~
 
-#### `copy NAME DEST`
+### `copy NAME DEST`
 
 Copy the existing note `NAME` to the new note `DEST`.
 
@@ -112,7 +116,7 @@ $ posce copy alpha delta
 # Copy "alpha.txt" to new file "delta.txt".
 ~~~
 
-#### `drop NAME`
+### `drop NAME`
 
 Move the existing note `NAME` to the system trash/recycle bin.
 
@@ -121,7 +125,7 @@ $ posce drop alpha
 # Move "alpha.txt" to trash/recycle bin.
 ~~~
 
-#### `dump FILE [-l]`
+### `dump FILE [-l]`
 
 Create a zip archive of the notes directory at `FILE`.
 
@@ -135,7 +139,7 @@ $ posce dump notes.zip --level 9
 # Create "notes.zip" with maximum compression.
 ~~~
 
-#### `edit NAME [-e]`
+### `edit NAME [-e]`
 
 Edit the existing note `NAME` in your default editor.
 
@@ -149,7 +153,7 @@ $ posce edit alpha --editor notepad
 # Open "alpha.txt" in "notepad".
 ~~~
 
-#### `find TERM [-r]`
+### `find TERM [-r]`
 
 List all notes containing the substring or regular expression `TERM`.
 
@@ -163,7 +167,7 @@ $ posce find "Charli{7}e{7}!" --regex
 charlie
 ~~~
 
-#### `list [GLOB] [-rs]`
+### `list [GLOB] [-rs]`
 
 List all notes with names matching `GLOB` (default `*`).
 
@@ -185,7 +189,7 @@ bravo
 alpha
 ~~~
 
-#### `make NAME [-f]`
+### `make NAME [-f]`
 
 Create the new empty note `NAME`.
 
@@ -199,7 +203,7 @@ $ posce make delta --file ~/temp.txt
 # Create "delta.txt" with contents from "~/temp.txt".
 ~~~
 
-#### `move NAME DEST`
+### `move NAME DEST`
 
 Move the existing note `NAME` to the new note `DEST`.
 
@@ -208,7 +212,7 @@ $ posce move alpha delta
 # Move "alpha.txt" to "delta.txt".
 ~~~
 
-#### `show NAME [-w]`
+### `show NAME [-w]`
 
 Print the contents of the existing note `NAME`.
 
@@ -223,7 +227,7 @@ This is the much longer note Bravo, and
 will be wrapped across two lines.
 ~~~
 
-#### `wget NAME URL`
+### `wget NAME URL`
 
 Download a URL into the existing note `NAME`.
 
@@ -231,6 +235,25 @@ Download a URL into the existing note `NAME`.
 $ posce wget alpha example.com
 # Download "https://example.com" and write contents to "alpha.txt".
 ~~~
+
+F.A.Q.
+------
+
+### Why use this instead of `ls`/`grep`/`wget`/etc?
+
+Posce is *one* app using *one* system on *one* directory. It's a very focused app, and that focus gives it a level of stability and uniformity I enjoy. Also, by using a single notes directory, you can [use disambiguated names](#usage) and get incredible brevity when entering commands.
+
+### Why environment variables? Why not a config file?
+
+The last thing you or I need is *another* configuration file clogging up our home directories. Environment variables are simpler, lighter, and can be overriden much easier. Also, if Posce did use a config file, it would only have those two variables anyway!
+
+### Why do I have to make a new note before editing it?
+
+It makes the code simpler and more robust, it allows for disambiguation of names, and I just prefer that kind of explicit operation.
+
+### Why can I only trash notes and not delete them?
+
+I'm paranoid about data loss, which means Posce will *never, ever, under any circumstances* implement file deletion. If you want to delete your files, do it yourself.
 
 Contribution
 ------------
