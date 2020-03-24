@@ -6,10 +6,30 @@ Posce
 [![](https://img.shields.io/github/issues/posce/posce)][is]
 [![](https://img.shields.io/badge/license-bsd--3-brightgreen)][li]
 
-**Posce** (pronounced *posh·ee*) is a note-taking toolkit for your command line. It takes a single directory of plaintext note files and lets you create, edit, manipulate, and organise them to your heart's content.
+**Posce** (pronounced *posh·ee*) is a note-taking toolkit for your command line. It takes a single directory of plaintext note files and lets you create, edit, manipulate, and organise them to your heart's content; all in a single unified interface.
 
 - See [changes.md][ch] for a complete changelog.
 - See [license.md][li] for licensing information.
+
+Table of Contents
+-----------------
+
+- [Installation](#installation)
+- [Configuration](#configuration)
+- [Usage](#usage)
+- [Commands](#commands)
+    - [`clip NAME`](#-clip-name-)
+    - [`copy NAME DEST`](#-copy-name-dest-)
+    - [`drop NAME`](#-drop-name-)
+    - [`dump FILE [-l]`](#-dump-file---l--)
+    - [`edit NAME [-e]`](#-edit-name---e--)
+    - [`find TERM [-r]`](#-find-term---r--)
+    - [`list [GLOB] [-rs]`](#-list--glob----rs--)
+    - [`make NAME [-f]`](#-make-name---f--)
+    - [`move NAME DEST`](#-move-name-dest-)
+    - [`show NAME [-w]`](#-show-name---w--)
+    - [`wget NAME URL`](#-wget-name-url-)
+- [Contribution](#contribution)
 
 Installation
 ------------
@@ -17,7 +37,7 @@ Installation
 Posce required [Python 3.8][py] or higher. To install, you can:
 
 - Run `pip install posce`, or
-- Download the [latest release][re].
+- Download and install the [latest release][re].
 
 Configuration
 -------------
@@ -39,247 +59,178 @@ Usage
 
 Notes are always referred to by their pure name, no extension or filepath. In addition, notes and commands are disambiguated, which means you can write abbreviated versions and — if it's unambiguous — Posce will automatically expand them for you.
 
-<details><summary>Example.</summary>
-
-If you have a directory that looks like this:
+For example, if you have a directory that looks like this:
 
 ~~~text
 - ~/notes
-    - josh.txt
-    - sam.txt
-    - toby.txt
+    - alpha.txt
+    - bravo.txt
+    - charlie.txt
 ~~~
 
 Then your notes will look like this:
 
 ~~~bash
 $ posce list
-josh
-sam
-toby
+alpha
+bravo
+charlie
 
-$ posce show j
-"Toby, come quick, Sam's getting his ass kicked by a girl!"
+$ posce show c
+Charliiiiiiieeeeeee!
 ~~~
 
 And you can abbreviate commands like this:
 
 ~~~bash
 $ posce l
-josh
-sam
-toby
+alpha
+bravo
+charlie
 
-$ posce s j
-"Toby, come quick, Sam's getting his ass kicked by a girl!"
+$ posce s c
+Charliiiiiiieeeeeee!
 ~~~
-
-I recommend aliasing `posce` to `p` for maximum brevity.
-
-</details>
 
 ### Commands
 
-Required arguments are marked with `<angles>`, optional arguments with `[brackets]`, choices are in `(parentheses)`.
+#### `clip NAME`
 
-#### `clip <NAME>`
-
-Copy a note's contents to the system clipboard.
-
-<details><summary>Example.</summary>
+Copy the existing note `NAME` to the clipboard.
 
 ~~~bash
-$ posce clip charlie
-# Copy "charlie.txt" contents to system clipboard.
+$ posce clip alpha
+# Copy "alpha.txt" to clipboard.
 ~~~
 
-</details>
+#### `copy NAME DEST`
 
-#### `copy <NAME> <DEST>`
-
-Copy an existing note to a different name.
-
-<details><summary>Example.</summary>
+Copy the existing note `NAME` to the new note `DEST`.
 
 ~~~bash
-$ posce copy ed larry
-# Copy "ed.txt" to "larry.txt".
+$ posce copy alpha delta
+# Copy "alpha.txt" to new file "delta.txt".
 ~~~
 
-</details>
+#### `drop NAME`
 
-#### `drop <NAME>`
-
-Move a note to the trash/recycle bin.
-
-<details><summary>Example.</summary>
+Move the existing note `NAME` to the system trash/recycle bin.
 
 ~~~bash
-$ posce drop mandy
-# Send "mandy.txt" to trash.
+$ posce drop alpha
+# Move "alpha.txt" to trash/recycle bin.
 ~~~
 
-</details>
+#### `dump FILE [-l]`
 
-#### `dump <DEST> [-l]`
+Create a zip archive of the notes directory at `FILE`.
 
-Create a zip archive of your notes directory.
-
-| Argument        | Description                     | Default |
-| --------------- | ------------------------------- | ------- |
-| `-l` `--level` | Compression level (from 0 to 9). | `5`.    |
-
-<details><summary>Example.</summary>
+- `-l` `--level INT`: Compression level from `0` to `9` (default `5`).
 
 ~~~bash
 $ posce dump notes.zip
-# Create "notes.zip" in current directory.
+# Create zip archive "notes.zip".
 
-$ posce dump notes.zip -l 9
+$ posce dump notes.zip --level 9
 # Create "notes.zip" with maximum compression.
 ~~~
 
-</details>
+#### `edit NAME [-e]`
 
-#### `edit <NAME> [-en]`
+Edit the existing note `NAME` in your default editor.
 
-Edit an existing note.
-
-| Argument        | Description                | Default         |
-| --------------- | -------------------------- | --------------- |
-| `-e` `--editor` | Open note in this program. | System default. |
-
-<details><summary>Example.</summary>
+- `e` `--editor PROG`: Open the note in the program `PROG` instead.
 
 ~~~bash
-$ posce edit toby
-# Open "toby.txt" in your default editor.
+$ posce edit alpha
+# Open "alpha.txt" in default "txt" editor.
 
-$ posce edit toby -e notepad
-# Open "toby.txt" in Notepad.
+$ posce edit alpha --editor notepad
+# Open "alpha.txt" in "notepad".
 ~~~
 
-</details>
+#### `find TERM [-r]`
 
-#### `find <TERM> [-r]`
+List all notes containing the substring or regular expression `TERM`.
 
-List all notes containing a substring or matching a regular expression.
-
-| Argument       | Description                            | Default   |
-| -------------- | -------------------------------------- | --------- |
-| `-r` `--regex` | Use search term as regular expression. | Disabled. |
-
-<details><summary>Example.</summary>
+- `r` `--regex`: Use search term as regex.
 
 ~~~bash
-$ posce find "jackass"
-josh
-toby
+$ posce find "Charliiiiiiieeeeeee!"
+charlie
 
-$ posce find "It's on page \d{1,3}!" -r
-claudia
+$ posce find "Charli{7}e{7}!" --regex
+charlie
 ~~~
-
-</details>
 
 #### `list [GLOB] [-rs]`
 
-List all notes, or notes matching `GLOB` (default `*`).
+List all notes with names matching `GLOB` (default `*`).
 
-| Argument                   | Description               | Default   |
-| -------------------------- | ------------------------- | --------- |
-| `-r` `--reverse`           | Reverse sort order.       | Disabled. |
-| `-s` `--sort (name\|size)` | Sort notes by this field. | `name`.   |
-
-<details><summary>Example.</summary>
+- `-r` `--reverse`: Reverse sorting order.
+- `-s` `--sort (name|size)`: Sort notes by name or size.
 
 ~~~bash
 $ posce list
+alpha
+bravo
 charlie
-claudia
-josh
-sam
-toby
 
-$ posce list c* -r -s name
-claudia
+$ posce list al*
+alpha
+
+$ posce list --reverse --sort name
 charlie
+bravo
+alpha
 ~~~
 
-</details>
+#### `make NAME [-f]`
 
-#### `make <NAME> [-f]`
+Create the new empty note `NAME`.
 
-Create a new note.
-
-| Argument      | Description            | Default   |
-| ------------- | ---------------------- | --------- |
-| `-f` `--file` | Copy note from a file. | Disabled. |
-
-<details><summary>Example.</summary>
+- `-f` `--file FILE`: Copy the note's contents from a file.
 
 ~~~bash
-$ posce make
-# Create empty note "amy.txt".
+$ posce make delta
+# Create empty file "delta.txt" in notes directory.
 
-$ posce make amy -f ~/resume.txt
-# Create note "amy.txt" with contents from "~/resume.txt".
+$ posce make delta --file ~/temp.txt
+# Create "delta.txt" with contents from "~/temp.txt".
 ~~~
 
-</details>
+#### `move NAME DEST`
 
-#### `move <NAME> <DEST>`
-
-Move an existing note to a different name.
-
-<details><summary>Example.</summary>
+Move the existing note `NAME` to the new note `DEST`.
 
 ~~~bash
-$ posce move claudia cj
-# Move "claudia.txt" to "cj.txt".
+$ posce move alpha delta
+# Move "alpha.txt" to "delta.txt".
 ~~~
 
-</details>
+#### `show NAME [-w]`
 
-#### `show <NAME> [-w]`
+Print the contents of the existing note `NAME`.
 
-Print an existing note's contents.
-
-| Argument            | Description                 | Default   |
-| ------------------- | --------------------------- | --------- |
-| `-w` `--wrap <int>` | Wrap text to width `<int>`. | Disabled. |
-
-<details><summary>Example.</summary>
+- `-w` `--wrap COLS`: Wrap text to this width.
 
 ~~~bash
-$ posce show claudia
-"I had woot canal!"
+$ posce show alpha
+This is the note Alpha!
 
-$ posce show sam -w 40
-"Over three and a half centuries ago,
-linked by faith and bound by a common
-desire for liberty, a small band of
-pilgrims sought out a place in the New
-World where they could worship according
-to their own beliefs... and solve
-crimes."
+$ posce show bravo --wrap 40
+This is the much longer note Bravo, and
+will be wrapped across two lines.
 ~~~
 
-</details>
+#### `wget NAME URL`
 
-#### `wget <NAME> <URL>`
-
-Download a URL to an existing note.
-
-<details><summary>Example.</summary>
+Download a URL into the existing note `NAME`.
 
 ~~~bash
-$ posce copy josh lemon-lyman.com
-# Download "http://lemon-lyman.com" to "josh.txt".
+$ posce wget alpha example.com
+# Download "https://example.com" and write contents to "alpha.txt".
 ~~~
-
-</details>
-
 
 Contribution
 ------------

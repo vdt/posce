@@ -10,8 +10,8 @@ from posce            import tools
 @group.command()
 @click.argument('name')
 @click.option('-e', '--editor',
-    help    = 'Editor to open in.',
-    default = '',
+    help    = 'Editor program to open in.',
+    metavar = 'PROG',
     type    = str,
 )
 @click.pass_obj
