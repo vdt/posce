@@ -95,6 +95,19 @@ $ posce copy ed larry
 
 </details>
 
+#### `drop <NAME>`
+
+Move a note to the trash/recycle bin.
+
+<details><summary>Example.</summary>
+
+~~~bash
+$ posce drop mandy
+# Send "mandy.txt" to trash.
+~~~
+
+</details>
+
 #### `dump <DEST> [-l]`
 
 Create a zip archive of your notes directory.
@@ -193,11 +206,11 @@ Create a new note.
 <details><summary>Example.</summary>
 
 ~~~bash
-$ posce make mandy
-# Create empty note "mandy.txt".
+$ posce make
+# Create empty note "amy.txt".
 
-$ posce make mandy -f ~/resume.txt
-# Create note "mandy.txt" with contents from "~/resume.txt".
+$ posce make amy -f ~/resume.txt
+# Create note "amy.txt" with contents from "~/resume.txt".
 ~~~
 
 </details>

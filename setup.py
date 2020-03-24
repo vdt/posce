@@ -23,7 +23,7 @@ setup(
     # Package specifications.
     packages         = find_packages(exclude=['*tests*']),
     python_requires  = '>=3.8.0',
-    install_requires = ['click>=7.1.1'],
+    install_requires = ['click>=7.1.1', 'Send2Trash>=1.5.0'],
 
     # Console executables.
     entry_points = {
