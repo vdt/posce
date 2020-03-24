@@ -2,8 +2,14 @@ Changelog
 =========
 
 ## Unreleased
+
+
+## [0.4.0] · 2020-03-24
 ### Added
 - New commands: `clip`, `drop`, `make`.
+
+### Changed
+- Improved readme and command help strings.
 
 
 ## [0.3.0] · 2020-03-24
@@ -41,6 +47,7 @@ Changelog
 
 
 [Unreleased]: https://github.com/posce/posce/commits/master
+[0.4.0]:      https://github.com/posce/posce/commits/0.4.0
 [0.3.0]:      https://github.com/posce/posce/commits/0.3.0
 [0.2.0]:      https://github.com/posce/posce/commits/0.2.0
 [0.1.1]:      https://github.com/posce/posce/commits/0.1.1
