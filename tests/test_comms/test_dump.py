@@ -2,7 +2,7 @@
 Tests for 'posce.comms.dump'.
 '''
 
-import os.path
+import os
 import zipfile
 
 from posce.comms.dump           import dump

@@ -2,8 +2,6 @@
 Tests for 'posce.comms.drop'.
 '''
 
-import os.path
-
 from posce.comms.drop           import drop
 from tests.test_items.test_book import book
 from tests.tools                import out

@@ -2,7 +2,6 @@
 Click command function 'wget'.
 '''
 
-import urllib.parse
 import urllib.request
 
 import click

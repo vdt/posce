@@ -2,8 +2,6 @@
 Tests for 'posce.comms.make'.
 '''
 
-import os.path
-
 from posce.comms.make           import make
 from tests.test_items.test_book import book
 from tests.tools                import out

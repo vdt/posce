@@ -2,8 +2,6 @@
 Class definition for 'Book'.
 '''
 
-import click
-
 from posce.items.note import Note
 from posce            import tools
 

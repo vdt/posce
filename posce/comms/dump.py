@@ -2,14 +2,12 @@
 Click command function 'dump'.
 '''
 
-import time
 import zipfile
 import zlib
 
 import click
 
 from posce.comms.base import group
-from posce            import tools
 
 @group.command(short_help='Archive notes.')
 @click.argument('file')

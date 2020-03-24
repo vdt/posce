@@ -2,8 +2,6 @@
 Tests for 'posce.comms.clip'.
 '''
 
-import os.path
-
 import pyperclip
 
 from posce.comms.clip           import clip
